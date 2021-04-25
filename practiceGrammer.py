@@ -1,4 +1,5 @@
-# if文
+
+# デコレータif文
 print('if文')
 
 x = 10
@@ -89,3 +90,47 @@ def what_is_this(color):
         return "I don't know"
 result = what_is_this('green')
 print(result)
+
+def say_something(word, *args):
+    print('word = ', word )
+    for arg in args:
+        print(arg)
+say_something('Hi', 'Mike', 'Michel')
+
+def menu(food, **kargs):
+    print('food = ', food)
+    for k, v in kargs.items():
+        print(k, v)
+d = {
+  'entree': 'vegitable',
+  'drink': 'coffee',
+  'desert': 'ice'
+}
+menu('beef', **d)
+
+
+# クロージャー
+def circle_area_func(pi):
+    def circle_area(radius):
+        return pi * radius * radius
+
+    return circle_area
+cal1 = circle_area_func(3.14) # return circle_area
+print(cal1(10))
+
+# デコレータ
+def print_info(func):
+    def wrapper(*args, **kwards):
+        print('start')
+        print(*args)
+        result = func(*args, **kwards)
+        print('end')
+        return result
+    return wrapper
+
+@print_info
+def add_num(a, b):
+    return a + b
+
+r = add_num(10, 20)
+print(r)

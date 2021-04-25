@@ -10,3 +10,11 @@ elif x === 0:
 else:
  ```
  条件式のの終端にコロンを付ける
+
+ ## for文の書き方
+ ```py
+num_list = [1, 2, 3, 4, 5]
+for i in num_list:
+    print(i)
+// 1, ,2, 3, 4, 5t
+ ```
