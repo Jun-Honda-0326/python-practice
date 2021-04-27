@@ -134,3 +134,35 @@ def add_num(a, b):
 
 r = add_num(10, 20)
 print(r)
+
+# ラムダ
+print('ラムダ')
+l = ['Mon', 'tue', 'Wed', 'Thu', 'fri']
+def change_words(words, func):
+    for word in words:
+        print(func(word))
+change_words(l, lambda word: word.capitalize())
+
+# ジェネレーター
+print('ジェネレーター')
+greet = ['Morning', 'Afternoon', 'Night']
+def greeting():
+    yield 'Morning'
+    yield 'Afternonn'
+    yield 'Night'
+
+def run(n = 10):
+    for _ in range(n):
+        yield 'run'
+r = run()
+g = greeting()
+
+print(next(g))
+print(next(r))
+print(next(r))
+print(next(r))
+print(next(g))
+print(next(g))
+print(next(r))
+
+# リスト内包表記
