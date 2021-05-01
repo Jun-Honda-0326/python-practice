@@ -164,5 +164,3 @@ print(next(r))
 print(next(g))
 print(next(g))
 print(next(r))
-
-# リスト内包表記
